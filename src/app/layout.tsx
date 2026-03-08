@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
+import { Providers } from "@/components/Providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,24 +15,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Z.ai Code Scaffold - AI-Powered Development",
-  description: "Modern Next.js scaffold optimized for AI-powered development with Z.ai. Built with TypeScript, Tailwind CSS, and shadcn/ui.",
-  keywords: ["Z.ai", "Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "AI development", "React"],
-  authors: [{ name: "Z.ai Team" }],
+  title: "Luna Monétis - Oracle Digitale | Oznya",
+  description: "Luna Monétis, l'oracle digitale mystique et élégante, assistante de Diane Boyer pour Oznya.com. Prédictions, tarot, numérologie et astrologie.",
+  keywords: ["Luna Monétis", "Oracle", "Tarot", "Astrologie", "Numérologie", "Diane Boyer", "Oznya", "Mystique", "Prédiction"],
+  authors: [{ name: "Diane Boyer - Oznya.com" }],
   icons: {
-    icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+    icon: "/favicon.ico",
   },
   openGraph: {
-    title: "Z.ai Code Scaffold",
-    description: "AI-powered development with modern React stack",
-    url: "https://chat.z.ai",
-    siteName: "Z.ai",
+    title: "Luna Monétis - Oracle Digitale",
+    description: "Découvre les mystères de ton destin avec Luna Monétis",
+    url: "https://oznya.com",
+    siteName: "Oznya",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Z.ai Code Scaffold",
-    description: "AI-powered development with modern React stack",
+    title: "Luna Monétis - Oracle Digitale",
+    description: "Découvre les mystères de ton destin avec Luna Monétis",
   },
 };
 
@@ -41,13 +42,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="fr" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >
-        {children}
+        <Providers>
+          {children}
+        </Providers>
         <Toaster />
       </body>
     </html>
   );
 }
+

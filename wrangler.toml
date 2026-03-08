@@ -1,0 +1,26 @@
+# Cloudflare Pages configuration for Luna Monétis
+# This file is optional for Cloudflare Pages with native Next.js support
+# but provides additional configuration options
+
+name = "luna-monetis"
+compatibility_date = "2024-01-01"
+
+# Pages project configuration
+pages_build_output_dir = ".next"
+
+# Environment variables should be set in the Cloudflare Dashboard
+# under Settings > Environment Variables for security
+
+# KV namespaces (optional - for session storage or caching)
+# [[kv_namespaces]]
+# binding = "KV"
+# id = "your-kv-namespace-id"
+
+# D1 Database (optional - if using Cloudflare D1 instead of Supabase)
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "luna-monetis-db"
+# database_id = "your-d1-database-id"
+
+# Note: For this project, we use Supabase for database
+# and z-ai-web-dev-sdk for AI capabilities
