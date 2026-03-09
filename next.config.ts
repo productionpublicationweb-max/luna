@@ -1,9 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Cloudflare Pages handles the output automatically
-  // No 'output: standalone' needed for Cloudflare
-  
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -11,13 +8,11 @@ const nextConfig: NextConfig = {
   
   // Cloudflare Pages compatible settings
   images: {
-    // Use Cloudflare Images or external image optimization
     unoptimized: true,
   },
   
-  // Experimental features for edge runtime compatibility
+  // Use edge runtime for Cloudflare compatibility
   experimental: {
-    // Enable for better Cloudflare Workers compatibility
     serverComponentsExternalPackages: ['@prisma/client', 'prisma'],
   },
 };
