@@ -207,7 +207,10 @@ export default function Home() {
   const displayCrystals = isAuthenticated && user ? user.crystals : (gameState?.crystalPoints || 0);
 
   return (
-    <div className="min-h-screen stars-bg relative overflow-hidden">
+    <div className="min-h-screen relative overflow-hidden">
+      {/* Aurora Borealis Animated Background */}
+      <div className="aurora-bg" />
+      
       {/* Welcome Screen */}
       {showWelcome && (
         <WelcomeScreen onComplete={handleWelcomeComplete} />

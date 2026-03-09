@@ -5,39 +5,39 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Sparkles, RotateCcw, X } from 'lucide-react';
 
-// 22 Major Arcana Cards
+// 22 Major Arcana Cards with Roman numerals
 const TAROT_CARDS: TarotCard[] = [
-  { id: 0, name: 'The Fool', nameFr: 'Le Mat', meaning: 'Nouveaux départs, innocence, spontanéité, foi en l\'avenir', reversedMeaning: 'Imprudence, risque, naïveté, refus de changer', symbol: '🎭' },
-  { id: 1, name: 'The Magician', nameFr: 'Le Bateleur', meaning: 'Manifestation, créativité, volonté, nouveaux départs', reversedMeaning: 'Manipulation, tromperie, talent gâché', symbol: '🎩' },
-  { id: 2, name: 'The High Priestess', nameFr: 'La Papesse', meaning: 'Intuition, mystère, sagesse intérieure, inconscient', reversedMeaning: 'Secrets, déconnexion de l\'intuition', symbol: '🌙' },
-  { id: 3, name: 'The Empress', nameFr: 'L\'Impératrice', meaning: 'Féminité, fertilité, nature, abondance', reversedMeaning: 'Dépendance, étouffement, vide créatif', symbol: '👑' },
-  { id: 4, name: 'The Emperor', nameFr: 'L\'Empereur', meaning: 'Autorité, structure, stabilité, père', reversedMeaning: 'Tyrannie, rigidité, contrôle excessif', symbol: '🦁' },
-  { id: 5, name: 'The Hierophant', nameFr: 'Le Pape', meaning: 'Tradition, spiritualité, enseignement, conformité', reversedMeaning: 'Rébellion, non-conformité, nouvelles approches', symbol: '⛪' },
-  { id: 6, name: 'The Lovers', nameFr: 'L\'Amoureux', meaning: 'Amour, harmonie, choix, relations', reversedMeaning: 'Déséquilibre, mauvais choix, conflit', symbol: '💕' },
-  { id: 7, name: 'The Chariot', nameFr: 'Le Chariot', meaning: 'Victoire, volonté, détermination, succès', reversedMeaning: 'Manque de direction, agressivité', symbol: '⚔️' },
-  { id: 8, name: 'Justice', nameFr: 'La Justice', meaning: 'Équilibre, vérité, justice, cause et effet', reversedMeaning: 'Injustice, déni de vérité', symbol: '⚖️' },
-  { id: 9, name: 'The Hermit', nameFr: 'L\'Hermite', meaning: 'Introspection, solitude, sagesse, guidance', reversedMeaning: 'Isolation, retrait excessif', symbol: '🏮' },
-  { id: 10, name: 'Wheel of Fortune', nameFr: 'La Roue de Fortune', meaning: 'Chance, destin, cycles, changement', reversedMeaning: 'Mauvaise chance, résistance au changement', symbol: '🎡' },
-  { id: 11, name: 'Strength', nameFr: 'La Force', meaning: 'Courage, patience, contrôle, force intérieure', reversedMeaning: 'Faiblesse, manque de confiance', symbol: '🦋' },
-  { id: 12, name: 'The Hanged Man', nameFr: 'Le Pendu', meaning: 'Pause, sacrifice, nouvelle perspective, lâcher-prise', reversedMeaning: 'Indécision, retard, sacrifice inutile', symbol: '🔮' },
-  { id: 13, name: 'Death', nameFr: 'Arcane sans Nom', meaning: 'Transformation, fin, changement profond, renaissance', reversedMeaning: 'Résistance au changement, stagnation', symbol: '🦋' },
-  { id: 14, name: 'Temperance', nameFr: 'Tempérance', meaning: 'Équilibre, modération, patience, harmonie', reversedMeaning: 'Déséquilibre, excès, impatience', symbol: '🌈' },
-  { id: 15, name: 'The Devil', nameFr: 'Le Diable', meaning: 'Attachement, addiction, matérialisme, ombre', reversedMeaning: 'Libération, briser les chaînes', symbol: '⛓️' },
-  { id: 16, name: 'The Tower', nameFr: 'La Maison Dieu', meaning: 'Bouleversement, révélation, destruction nécessaire', reversedMeaning: 'Transformation évitée, peur du changement', symbol: '⚡' },
-  { id: 17, name: 'The Star', nameFr: 'L\'Étoile', meaning: 'Espoir, inspiration, renouveau, sérénité', reversedMeaning: 'Désespoir, perte de foi', symbol: '⭐' },
-  { id: 18, name: 'The Moon', nameFr: 'La Lune', meaning: 'Illusion, intuition, inconscient, rêves', reversedMeaning: 'Confusion, peur, déception', symbol: '🌙' },
-  { id: 19, name: 'The Sun', nameFr: 'Le Soleil', meaning: 'Joie, succès, vitalité, positivité', reversedMeaning: 'Optimisme excessif, absence de joie', symbol: '☀️' },
-  { id: 20, name: 'Judgement', nameFr: 'Le Jugement', meaning: 'Réveil, renaissance, appel intérieur, rédemption', reversedMeaning: 'Doute de soi, refus de l\'appel', symbol: '📯' },
-  { id: 21, name: 'The World', nameFr: 'Le Monde', meaning: 'Accomplissement, intégration, voyage, réussite', reversedMeaning: 'Inachèvement, absence de clôture', symbol: '🌍' },
+  { id: 0, numeral: '0', name: 'The Fool', nameFr: 'Le Mat', meaning: 'Nouveaux départs, innocence, spontanéité, foi en l\'avenir', reversedMeaning: 'Imprudence, risque, naïveté, refus de changer' },
+  { id: 1, numeral: 'I', name: 'The Magician', nameFr: 'Le Bateleur', meaning: 'Manifestation, créativité, volonté, nouveaux départs', reversedMeaning: 'Manipulation, tromperie, talent gâché' },
+  { id: 2, numeral: 'II', name: 'The High Priestess', nameFr: 'La Papesse', meaning: 'Intuition, mystère, sagesse intérieure, inconscient', reversedMeaning: 'Secrets, déconnexion de l\'intuition' },
+  { id: 3, numeral: 'III', name: 'The Empress', nameFr: 'L\'Impératrice', meaning: 'Féminité, fertilité, nature, abondance', reversedMeaning: 'Dépendance, étouffement, vide créatif' },
+  { id: 4, numeral: 'IV', name: 'The Emperor', nameFr: 'L\'Empereur', meaning: 'Autorité, structure, stabilité, père', reversedMeaning: 'Tyrannie, rigidité, contrôle excessif' },
+  { id: 5, numeral: 'V', name: 'The Hierophant', nameFr: 'Le Pape', meaning: 'Tradition, spiritualité, enseignement, conformité', reversedMeaning: 'Rébellion, non-conformité, nouvelles approches' },
+  { id: 6, numeral: 'VI', name: 'The Lovers', nameFr: 'L\'Amoureux', meaning: 'Amour, harmonie, choix, relations', reversedMeaning: 'Déséquilibre, mauvais choix, conflit' },
+  { id: 7, numeral: 'VII', name: 'The Chariot', nameFr: 'Le Chariot', meaning: 'Victoire, volonté, détermination, succès', reversedMeaning: 'Manque de direction, agressivité' },
+  { id: 8, numeral: 'VIII', name: 'Justice', nameFr: 'La Justice', meaning: 'Équilibre, vérité, justice, cause et effet', reversedMeaning: 'Injustice, déni de vérité' },
+  { id: 9, numeral: 'IX', name: 'The Hermit', nameFr: 'L\'Hermite', meaning: 'Introspection, solitude, sagesse, guidance', reversedMeaning: 'Isolation, retrait excessif' },
+  { id: 10, numeral: 'X', name: 'Wheel of Fortune', nameFr: 'La Roue de Fortune', meaning: 'Chance, destin, cycles, changement', reversedMeaning: 'Mauvaise chance, résistance au changement' },
+  { id: 11, numeral: 'XI', name: 'Strength', nameFr: 'La Force', meaning: 'Courage, patience, contrôle, force intérieure', reversedMeaning: 'Faiblesse, manque de confiance' },
+  { id: 12, numeral: 'XII', name: 'The Hanged Man', nameFr: 'Le Pendu', meaning: 'Pause, sacrifice, nouvelle perspective, lâcher-prise', reversedMeaning: 'Indécision, retard, sacrifice inutile' },
+  { id: 13, numeral: 'XIII', name: 'Death', nameFr: 'Arcane sans Nom', meaning: 'Transformation, fin, changement profond, renaissance', reversedMeaning: 'Résistance au changement, stagnation' },
+  { id: 14, numeral: 'XIV', name: 'Temperance', nameFr: 'Tempérance', meaning: 'Équilibre, modération, patience, harmonie', reversedMeaning: 'Déséquilibre, excès, impatience' },
+  { id: 15, numeral: 'XV', name: 'The Devil', nameFr: 'Le Diable', meaning: 'Attachement, addiction, matérialisme, ombre', reversedMeaning: 'Libération, briser les chaînes' },
+  { id: 16, numeral: 'XVI', name: 'The Tower', nameFr: 'La Maison Dieu', meaning: 'Bouleversement, révélation, destruction nécessaire', reversedMeaning: 'Transformation évitée, peur du changement' },
+  { id: 17, numeral: 'XVII', name: 'The Star', nameFr: 'L\'Étoile', meaning: 'Espoir, inspiration, renouveau, sérénité', reversedMeaning: 'Désespoir, perte de foi' },
+  { id: 18, numeral: 'XVIII', name: 'The Moon', nameFr: 'La Lune', meaning: 'Illusion, intuition, inconscient, rêves', reversedMeaning: 'Confusion, peur, déception' },
+  { id: 19, numeral: 'XIX', name: 'The Sun', nameFr: 'Le Soleil', meaning: 'Joie, succès, vitalité, positivité', reversedMeaning: 'Optimisme excessif, absence de joie' },
+  { id: 20, numeral: 'XX', name: 'Judgement', nameFr: 'Le Jugement', meaning: 'Réveil, renaissance, appel intérieur, rédemption', reversedMeaning: 'Doute de soi, refus de l\'appel' },
+  { id: 21, numeral: 'XXI', name: 'The World', nameFr: 'Le Monde', meaning: 'Accomplissement, intégration, voyage, réussite', reversedMeaning: 'Inachèvement, absence de clôture' },
 ];
 
 interface TarotCard {
   id: number;
+  numeral: string;
   name: string;
   nameFr: string;
   meaning: string;
   reversedMeaning: string;
-  symbol: string;
 }
 
 interface DrawnCard extends TarotCard {
@@ -52,6 +52,121 @@ interface TarotModalProps {
 
 type SpreadType = 'single' | 'three';
 
+// Beautiful Tarot Card Component
+function TarotCardDisplay({ card, isReversed, size = 'md', showDetails = false }: { 
+  card: TarotCard | null; 
+  isReversed?: boolean;
+  size?: 'sm' | 'md' | 'lg';
+  showDetails?: boolean;
+}) {
+  const sizeClasses = {
+    sm: 'w-12 h-18 text-xs',
+    md: 'w-28 h-44 text-sm',
+    lg: 'w-32 h-48 text-base'
+  };
+
+  return (
+    <div className={cn(
+      "relative rounded-xl overflow-hidden transition-all duration-500",
+      sizeClasses[size],
+      isReversed && "rotate-180"
+    )}>
+      {/* Card Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-cosmic-blue via-deep-indigo to-galactic-violet" />
+      
+      {/* Gold border frame */}
+      <div className="absolute inset-0 border-2 border-gold-signature/60 rounded-xl" />
+      
+      {/* Inner decorative frame */}
+      <div className="absolute inset-2 border border-gold-light/30 rounded-lg" />
+      
+      {/* Corner ornaments */}
+      <div className="absolute top-1 left-1 w-2 h-2 border-t border-l border-gold-light/50" />
+      <div className="absolute top-1 right-1 w-2 h-2 border-t border-r border-gold-light/50" />
+      <div className="absolute bottom-1 left-1 w-2 h-2 border-b border-l border-gold-light/50" />
+      <div className="absolute bottom-1 right-1 w-2 h-2 border-b border-r border-gold-light/50" />
+      
+      {card && (
+        <div className="relative z-10 h-full flex flex-col items-center justify-center p-2" style={{ transform: isReversed ? 'rotate(180deg)' : 'none' }}>
+          {/* Roman Numeral */}
+          <div className="text-gold-light font-serif text-lg md:text-2xl font-bold tracking-wider">
+            {card.numeral}
+          </div>
+          
+          {/* Mystical symbol - decorative lines */}
+          <div className="my-2 md:my-3 w-6 md:w-10 h-px bg-gradient-to-r from-transparent via-gold-light to-transparent" />
+          
+          {/* Card Name */}
+          <div className="text-center">
+            <p className="text-golden-ivory text-xs md:text-sm font-medium leading-tight">
+              {card.nameFr}
+            </p>
+          </div>
+          
+          {/* Decorative star */}
+          <div className="mt-2 md:mt-3 text-gold-light/70 text-xs">
+            ✦
+          </div>
+        </div>
+      )}
+      
+      {/* Reversed indicator */}
+      {isReversed && (
+        <div className="absolute top-2 right-2 text-stellar-mauve text-lg z-20" style={{ transform: 'rotate(180deg)' }}>
+          ↺
+        </div>
+      )}
+    </div>
+  );
+}
+
+// Card Back Component
+function TarotCardBack({ onClick, selected }: { onClick?: () => void; selected?: boolean }) {
+  return (
+    <button
+      onClick={onClick}
+      className={cn(
+        "relative aspect-[2/3] rounded-xl overflow-hidden transition-all duration-300",
+        "hover:scale-105 hover:-translate-y-2",
+        "border border-gold-signature/30",
+        selected && "ring-2 ring-gold-light scale-105"
+      )}
+    >
+      {/* Card Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-cosmic-blue via-deep-indigo to-galactic-violet" />
+      
+      {/* Mystical pattern */}
+      <div className="absolute inset-0 opacity-30">
+        <svg viewBox="0 0 100 150" className="w-full h-full">
+          {/* Central eye pattern */}
+          <circle cx="50" cy="75" r="30" fill="none" stroke="#D6A73D" strokeWidth="1" />
+          <circle cx="50" cy="75" r="20" fill="none" stroke="#F1D37A" strokeWidth="0.5" />
+          <circle cx="50" cy="75" r="10" fill="none" stroke="#D6A73D" strokeWidth="0.5" />
+          
+          {/* Star pattern */}
+          <path d="M50 20 L53 30 L63 30 L55 37 L58 47 L50 40 L42 47 L45 37 L37 30 L47 30 Z" fill="none" stroke="#F1D37A" strokeWidth="0.5" />
+          <path d="M50 130 L53 120 L63 120 L55 113 L58 103 L50 110 L42 103 L45 113 L37 120 L47 120 Z" fill="none" stroke="#F1D37A" strokeWidth="0.5" />
+          
+          {/* Corner decorations */}
+          <path d="M10 10 L20 10 L10 20 Z" fill="none" stroke="#D6A73D" strokeWidth="0.5" />
+          <path d="M90 10 L80 10 L90 20 Z" fill="none" stroke="#D6A73D" strokeWidth="0.5" />
+          <path d="M10 140 L20 140 L10 130 Z" fill="none" stroke="#D6A73D" strokeWidth="0.5" />
+          <path d="M90 140 L80 140 L90 130 Z" fill="none" stroke="#D6A73D" strokeWidth="0.5" />
+        </svg>
+      </div>
+      
+      {/* Border frame */}
+      <div className="absolute inset-0 border-2 border-gold-signature/40 rounded-xl" />
+      <div className="absolute inset-1.5 border border-gold-light/20 rounded-lg" />
+      
+      {/* Center text */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <span className="text-gold-light/60 text-2xl">✧</span>
+      </div>
+    </button>
+  );
+}
+
 export function TarotModal({ isOpen, onClose, onAwardPoints }: TarotModalProps) {
   const [phase, setPhase] = useState<'select' | 'draw' | 'reveal' | 'interpretation'>('select');
   const [spreadType, setSpreadType] = useState<SpreadType>('single');
@@ -61,7 +176,6 @@ export function TarotModal({ isOpen, onClose, onAwardPoints }: TarotModalProps) 
   const [interpretation, setInterpretation] = useState<string>('');
   const [isLoading, setIsLoading] = useState(false);
 
-  // Reset state when modal opens
   useEffect(() => {
     if (isOpen) {
       resetReading();
@@ -94,16 +208,11 @@ export function TarotModal({ isOpen, onClose, onAwardPoints }: TarotModalProps) 
     
     const newSelected = [...selectedCards, drawnCard];
     setSelectedCards(newSelected);
-
-    // Remove from available
     setAvailableCards(prev => prev.filter(c => c.id !== card.id));
 
-    // Check if selection complete
     const maxCards = spreadType === 'three' ? 3 : 1;
     if (newSelected.length >= maxCards) {
-      setTimeout(() => {
-        setPhase('reveal');
-      }, 500);
+      setTimeout(() => setPhase('reveal'), 500);
     }
   }, [phase, selectedCards, spreadType]);
 
@@ -130,16 +239,12 @@ export function TarotModal({ isOpen, onClose, onAwardPoints }: TarotModalProps) 
       const response = await fetch('/api/tarot', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          cards: cardsInfo,
-          spreadType
-        })
+        body: JSON.stringify({ cards: cardsInfo, spreadType })
       });
 
       const data = await response.json();
       setInterpretation(data.interpretation || data.error || 'Les étoiles gardent leur mystère...');
 
-      // Award crystals
       const points = spreadType === 'three' ? 50 : 25;
       onAwardPoints(points);
 
@@ -155,15 +260,9 @@ export function TarotModal({ isOpen, onClose, onAwardPoints }: TarotModalProps) 
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-      {/* Backdrop */}
-      <div 
-        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-        onClick={onClose}
-      />
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
 
-      {/* Modal */}
       <div className="relative w-full max-w-2xl max-h-[90vh] overflow-hidden">
-        {/* Glassmorphism container */}
         <div className="glass rounded-3xl p-6 shadow-2xl border border-gold-signature/20">
           {/* Stars decoration */}
           <div className="absolute top-0 left-0 w-full h-full overflow-hidden rounded-3xl pointer-events-none">
@@ -181,15 +280,10 @@ export function TarotModal({ isOpen, onClose, onAwardPoints }: TarotModalProps) 
             ))}
           </div>
 
-          {/* Close button */}
-          <button
-            onClick={onClose}
-            className="absolute top-4 right-4 z-10 p-2 rounded-full hover:bg-white/10 transition-colors"
-          >
+          <button onClick={onClose} className="absolute top-4 right-4 z-10 p-2 rounded-full hover:bg-white/10 transition-colors">
             <X className="w-5 h-5 text-light-lavender" />
           </button>
 
-          {/* Header */}
           <div className="text-center mb-6">
             <h2 className="text-2xl font-bold gradient-text-gold flex items-center justify-center gap-2">
               <Sparkles className="w-6 h-6" />
@@ -200,35 +294,32 @@ export function TarotModal({ isOpen, onClose, onAwardPoints }: TarotModalProps) 
             </p>
           </div>
 
-          {/* Content based on phase */}
           {phase === 'select' && (
             <div className="space-y-6 animate-fade-in">
-              <p className="text-center text-soft-champagne">
-                Choisis ton tirage, âme curieuse :
-              </p>
+              <p className="text-center text-soft-champagne">Choisis ton tirage, âme curieuse :</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   onClick={() => startDrawing('single')}
-                  className={cn(
-                    "glass-gold text-gold-signature hover:bg-gold-signature/20",
-                    "px-8 py-6 text-lg rounded-xl transition-all hover:scale-105"
-                  )}
+                  className="btn-luna-vitreux px-8 py-6 text-lg"
                 >
                   <div className="flex flex-col items-center gap-2">
-                    <span className="text-2xl">🎴</span>
+                    <div className="flex justify-center">
+                      <TarotCardDisplay card={null} size="sm" />
+                    </div>
                     <span>Tirage Simple</span>
                     <span className="text-xs opacity-70">1 carte</span>
                   </div>
                 </Button>
                 <Button
                   onClick={() => startDrawing('three')}
-                  className={cn(
-                    "glass-gold text-gold-signature hover:bg-gold-signature/20",
-                    "px-8 py-6 text-lg rounded-xl transition-all hover:scale-105"
-                  )}
+                  className="btn-luna-vitreux px-8 py-6 text-lg"
                 >
                   <div className="flex flex-col items-center gap-2">
-                    <span className="text-2xl">🎴🎴🎴</span>
+                    <div className="flex gap-1 justify-center">
+                      <TarotCardDisplay card={null} size="sm" />
+                      <TarotCardDisplay card={null} size="sm" />
+                      <TarotCardDisplay card={null} size="sm" />
+                    </div>
                     <span>Tirage Triple</span>
                     <span className="text-xs opacity-70">Passé • Présent • Futur</span>
                   </div>
@@ -245,49 +336,24 @@ export function TarotModal({ isOpen, onClose, onAwardPoints }: TarotModalProps) 
                   : 'Sélectionne une carte...'}
               </p>
 
-              {/* Selected cards */}
               {selectedCards.length > 0 && (
                 <div className="flex justify-center gap-2 mb-4">
-                  {selectedCards.map((card, index) => (
-                    <div
-                      key={card.id}
-                      className="w-16 h-24 glass-gold rounded-lg flex items-center justify-center animate-fade-in"
-                      style={{ animationDelay: `${index * 0.1}s` }}
-                    >
-                      <span className="text-2xl">{card.symbol}</span>
-                    </div>
+                  {selectedCards.map((card) => (
+                    <TarotCardDisplay key={card.id} card={card} isReversed={card.isReversed} size="sm" />
                   ))}
                 </div>
               )}
 
-              {/* Card spread */}
               <div className={cn(
                 "grid gap-2 transition-all duration-500",
                 shuffling ? "opacity-0 scale-95" : "opacity-100 scale-100",
                 "grid-cols-6 sm:grid-cols-8"
               )}>
                 {availableCards.slice(0, 22).map((card, index) => (
-                  <button
-                    key={card.id}
+                  <TarotCardBack 
+                    key={card.id} 
                     onClick={() => selectCard(card)}
-                    disabled={phase !== 'draw'}
-                    className={cn(
-                      "aspect-[2/3] rounded-lg transition-all duration-300",
-                      "glass hover:glass-gold cursor-pointer",
-                      "hover:scale-110 hover:-translate-y-1",
-                      "flex items-center justify-center",
-                      "border border-gold-signature/30",
-                      "group"
-                    )}
-                    style={{ 
-                      animationDelay: `${index * 0.02}s`,
-                      transform: `rotate(${(Math.random() - 0.5) * 10}deg)`
-                    }}
-                  >
-                    <span className="text-lg opacity-50 group-hover:opacity-100 transition-opacity">
-                      ✧
-                    </span>
-                  </button>
+                  />
                 ))}
               </div>
             </div>
@@ -295,38 +361,12 @@ export function TarotModal({ isOpen, onClose, onAwardPoints }: TarotModalProps) 
 
           {phase === 'reveal' && (
             <div className="space-y-6 animate-fade-in">
-              <p className="text-center text-gold-light">
-                ✨ Tes cartes sont révélées ✨
-              </p>
+              <p className="text-center text-gold-light">✨ Tes cartes sont révélées ✨</p>
 
-              {/* Revealed cards */}
               <div className="flex justify-center gap-4 flex-wrap">
                 {selectedCards.map((card, index) => (
-                  <div
-                    key={card.id}
-                    className="animate-fade-in"
-                    style={{ animationDelay: `${index * 0.2}s` }}
-                  >
-                    <div className={cn(
-                      "w-28 h-44 rounded-xl p-3 flex flex-col items-center justify-center",
-                      "glass-gold border border-gold-signature/40",
-                      card.isReversed && "rotate-180"
-                    )}>
-                      <span className="text-3xl mb-2" style={{ transform: card.isReversed ? 'rotate(180deg)' : 'none' }}>
-                        {card.symbol}
-                      </span>
-                      <span className={cn(
-                        "text-xs text-center font-medium",
-                        card.isReversed && "rotate-180"
-                      )} style={{ transform: card.isReversed ? 'rotate(180deg)' : 'none' }}>
-                        {card.nameFr}
-                      </span>
-                      {card.isReversed && (
-                        <span className="absolute top-2 right-2 text-xs text-stellar-mauve rotate-0">
-                          ↺
-                        </span>
-                      )}
-                    </div>
+                  <div key={card.id} className="animate-fade-in" style={{ animationDelay: `${index * 0.2}s` }}>
+                    <TarotCardDisplay card={card} isReversed={card.isReversed} size="lg" />
                     {spreadType === 'three' && (
                       <p className="text-center text-xs text-light-lavender mt-2">
                         {['Passé', 'Présent', 'Futur'][index]}
@@ -336,7 +376,6 @@ export function TarotModal({ isOpen, onClose, onAwardPoints }: TarotModalProps) 
                 ))}
               </div>
 
-              {/* Card meanings */}
               <div className="space-y-3 max-h-48 overflow-y-auto pr-2">
                 {selectedCards.map((card, index) => (
                   <div key={card.id} className="glass rounded-lg p-3">
@@ -351,11 +390,11 @@ export function TarotModal({ isOpen, onClose, onAwardPoints }: TarotModalProps) 
                 ))}
               </div>
 
-              <div className="flex justify-center gap-3">
+              <div className="flex justify-center">
                 <Button
                   onClick={getInterpretation}
                   disabled={isLoading}
-                  className="glass-gold text-gold-signature hover:bg-gold-signature/30 px-6"
+                  className="btn-luna-vitreux px-6"
                 >
                   {isLoading ? (
                     <span className="flex items-center gap-2">
@@ -375,16 +414,12 @@ export function TarotModal({ isOpen, onClose, onAwardPoints }: TarotModalProps) 
 
           {phase === 'interpretation' && (
             <div className="space-y-4 animate-fade-in">
-              {/* Cards reminder */}
               <div className="flex justify-center gap-2">
                 {selectedCards.map((card) => (
-                  <div key={card.id} className="w-12 h-18 glass-gold rounded-lg flex items-center justify-center">
-                    <span className="text-lg">{card.symbol}</span>
-                  </div>
+                  <TarotCardDisplay key={card.id} card={card} isReversed={card.isReversed} size="sm" />
                 ))}
               </div>
 
-              {/* Interpretation */}
               <div className="glass rounded-xl p-4 min-h-[200px]">
                 {isLoading ? (
                   <div className="flex items-center justify-center h-full">
@@ -401,20 +436,12 @@ export function TarotModal({ isOpen, onClose, onAwardPoints }: TarotModalProps) 
                 )}
               </div>
 
-              {/* Actions */}
               <div className="flex justify-center gap-3">
-                <Button
-                  onClick={resetReading}
-                  variant="outline"
-                  className="border-gold-signature/30 text-gold-light hover:bg-gold-signature/10"
-                >
+                <Button onClick={resetReading} className="btn-luna-vitreux-sm">
                   <RotateCcw className="w-4 h-4 mr-2" />
                   Nouveau Tirage
                 </Button>
-                <Button
-                  onClick={onClose}
-                  className="glass-gold text-gold-signature"
-                >
+                <Button onClick={onClose} className="btn-luna-vitreux-sm">
                   Fermer
                 </Button>
               </div>

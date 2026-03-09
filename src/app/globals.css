@@ -313,3 +313,168 @@
   background: radial-gradient(ellipse, rgba(214, 167, 61, 0.2) 0%, transparent 70%);
   pointer-events: none;
 }
+
+/* ========== AURORA BOREALIS ANIMATED BACKGROUND ========== */
+.aurora-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  background: linear-gradient(135deg, #0F1026 0%, #1C2454 40%, #2B2A6B 70%, #3F1F52 100%);
+  overflow: hidden;
+}
+
+.aurora-bg::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: 
+    radial-gradient(ellipse at 20% 20%, rgba(20, 74, 99, 0.4) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(91, 45, 115, 0.3) 0%, transparent 50%),
+    radial-gradient(ellipse at 40% 60%, rgba(43, 42, 107, 0.4) 0%, transparent 50%),
+    radial-gradient(ellipse at 60% 80%, rgba(91, 45, 115, 0.3) 0%, transparent 50%);
+  animation: auroraMove 20s ease-in-out infinite;
+}
+
+.aurora-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(1px 1px at 10% 20%, rgba(241, 211, 122, 0.9), transparent),
+    radial-gradient(1.5px 1.5px at 30% 40%, rgba(167, 139, 199, 0.8), transparent),
+    radial-gradient(1px 1px at 50% 10%, rgba(241, 211, 122, 0.7), transparent),
+    radial-gradient(2px 2px at 70% 60%, rgba(167, 139, 199, 0.6), transparent),
+    radial-gradient(1px 1px at 90% 30%, rgba(241, 211, 122, 0.8), transparent),
+    radial-gradient(1.5px 1.5px at 15% 70%, rgba(167, 139, 199, 0.7), transparent),
+    radial-gradient(1px 1px at 85% 80%, rgba(241, 211, 122, 0.6), transparent);
+  background-size: 200px 200px;
+  animation: starsTwinkle 4s ease-in-out infinite;
+}
+
+@keyframes auroraMove {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(5%, 5%) rotate(2deg);
+  }
+  50% {
+    transform: translate(-5%, 10%) rotate(-1deg);
+  }
+  75% {
+    transform: translate(-10%, -5%) rotate(1deg);
+  }
+}
+
+@keyframes starsTwinkle {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+/* Pulsar stars */
+.pulsar-star {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(241, 211, 122, 1) 0%, rgba(241, 211, 122, 0) 70%);
+  animation: pulsar 3s ease-in-out infinite;
+}
+
+@keyframes pulsar {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.8;
+  }
+}
+
+/* ========== LUNA VITREUX BUTTONS ========== */
+.btn-luna-vitreux {
+  color: #F3E7BE;
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  border: 1px solid rgba(214, 167, 61, 0.3);
+  
+  background: linear-gradient(
+    135deg, 
+    rgba(27, 36, 84, 0.4),
+    rgba(91, 45, 115, 0.3)
+  );
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-luna-vitreux:hover {
+  border-color: #D6A73D;
+  box-shadow: 
+    0 0 15px rgba(214, 167, 61, 0.6),
+    0 0 30px rgba(91, 45, 115, 0.4),
+    inset 0 0 20px rgba(241, 211, 122, 0.1);
+  transform: translateY(-2px);
+}
+
+.btn-luna-vitreux::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.1), 
+    transparent
+  );
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.btn-luna-vitreux:hover::before {
+  left: 100%;
+}
+
+/* Small variant */
+.btn-luna-vitreux-sm {
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  border-radius: 10px;
+}
+
+/* Icon variant */
+.btn-luna-vitreux-icon {
+  padding: 10px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
