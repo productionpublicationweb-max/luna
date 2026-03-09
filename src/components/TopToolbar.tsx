@@ -1,7 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import { Settings, Volume2, VolumeX, ShoppingBag } from 'lucide-react';
+import { Settings, Volume2, VolumeX, ShoppingBag, LogIn, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Tooltip,
@@ -9,15 +9,20 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
+import { useUser } from '@/contexts/UserContext';
+import Image from 'next/image';
 
 interface TopToolbarProps {
   onOpenSidebar: () => void;
   onOpenShop: () => void;
   soundEnabled: boolean;
   onToggleSound: () => void;
+  onOpenAuth: () => void;
 }
 
-export function TopToolbar({ onOpenSidebar, onOpenShop, soundEnabled, onToggleSound }: TopToolbarProps) {
+export function TopToolbar({ onOpenSidebar, onOpenShop, soundEnabled, onToggleSound, onOpenAuth }: TopToolbarProps) {
+  const { user, isAuthenticated } = useUser();
+
   return (
     <div className="fixed top-0 left-0 right-0 z-40 px-4 py-3">
       <div className="flex items-center justify-between max-w-4xl mx-auto">
@@ -29,7 +34,7 @@ export function TopToolbar({ onOpenSidebar, onOpenShop, soundEnabled, onToggleSo
                 variant="ghost"
                 size="icon"
                 onClick={onOpenSidebar}
-                className="glass rounded-full hover:glass-gold transition-all"
+                className="btn-luna-vitreux-icon glass rounded-full hover:glass-gold transition-all"
               >
                 <Settings className="w-5 h-5 text-light-lavender hover:text-gold-light transition-colors" />
               </Button>
@@ -42,19 +47,19 @@ export function TopToolbar({ onOpenSidebar, onOpenShop, soundEnabled, onToggleSo
 
         {/* Center - Luna Brand */}
         <div className="flex items-center gap-2">
-          <div className="relative">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-cosmic-blue to-galactic-violet flex items-center justify-center glass-gold p-0.5">
-              <span className="text-lg">🌙</span>
-            </div>
-            <span className="absolute -top-1 -right-1 flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-signature opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-gold-light"></span>
-            </span>
+          <div className="relative w-10 h-10 rounded-full overflow-hidden glass-gold p-0.5">
+            <Image
+              src="/luna-avatar.png"
+              alt="Luna Monétis"
+              fill
+              className="object-cover rounded-full"
+              priority
+            />
           </div>
           <span className="font-medium gradient-text-gold text-lg hidden sm:block">Luna Monétis</span>
         </div>
 
-        {/* Right side - Sound & Shop */}
+        {/* Right side - Sound, Shop & Auth */}
         <div className="flex items-center gap-2">
           <TooltipProvider>
             <Tooltip>
@@ -63,7 +68,7 @@ export function TopToolbar({ onOpenSidebar, onOpenShop, soundEnabled, onToggleSo
                   variant="ghost"
                   size="icon"
                   onClick={onToggleSound}
-                  className="glass rounded-full hover:glass-gold transition-all"
+                  className="btn-luna-vitreux-icon glass rounded-full hover:glass-gold transition-all"
                 >
                   {soundEnabled ? (
                     <Volume2 className="w-5 h-5 text-gold-signature" />
@@ -85,7 +90,7 @@ export function TopToolbar({ onOpenSidebar, onOpenShop, soundEnabled, onToggleSo
                   variant="ghost"
                   size="icon"
                   onClick={onOpenShop}
-                  className="glass rounded-full hover:glass-gold transition-all"
+                  className="btn-luna-vitreux-icon glass rounded-full hover:glass-gold transition-all"
                 >
                   <ShoppingBag className="w-5 h-5 text-light-lavender hover:text-gold-light transition-colors" />
                 </Button>
@@ -95,6 +100,36 @@ export function TopToolbar({ onOpenSidebar, onOpenShop, soundEnabled, onToggleSo
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
+
+          {/* Connexion Button */}
+          {isAuthenticated && user ? (
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button
+                    onClick={onOpenSidebar}
+                    className="btn-luna-vitreux flex items-center gap-2"
+                  >
+                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-gold-signature to-galactic-violet flex items-center justify-center text-xs font-medium text-dark-space-bg">
+                      {user.name.charAt(0).toUpperCase()}
+                    </div>
+                    <span className="hidden sm:inline text-sm">{user.name}</span>
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Mon compte</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          ) : (
+            <Button
+              onClick={onOpenAuth}
+              className="btn-luna-vitreux flex items-center gap-2"
+            >
+              <LogIn className="w-4 h-4" />
+              <span className="hidden sm:inline">Connexion</span>
+            </Button>
+          )}
         </div>
       </div>
     </div>

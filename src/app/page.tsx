@@ -227,6 +227,7 @@ export default function Home() {
           onOpenShop={() => setIsShopOpen(true)}
           soundEnabled={soundEnabled}
           onToggleSound={handleToggleSound}
+          onOpenAuth={() => setShowAuthModal(true)}
         />
 
         {/* Main Content */}

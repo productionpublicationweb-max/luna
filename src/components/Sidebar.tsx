@@ -186,7 +186,7 @@ export function Sidebar({
             </div>
 
             {/* Admin Section (only for admins) */}
-            {(user?.isAdmin || !isAuthenticated) && (
+            {user?.isAdmin && (
               <>
                 <Separator className="my-4 bg-light-lavender/10" />
                 <div className="space-y-2">
